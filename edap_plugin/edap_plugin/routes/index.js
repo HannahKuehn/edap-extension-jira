@@ -1,3 +1,5 @@
+
+
 export default function routes(app, addon) {
     // Redirect root path to /atlassian-connect.json,
     // which will be served by atlassian-connect-express.
@@ -10,15 +12,29 @@ export default function routes(app, addon) {
     app.get('/hello-world', addon.authenticate(), (req, res) => {
         // Rendering a template is easy; the render method takes two params: the name of the component or template file, and its props.
         // Handlebars and jsx are both supported, but please note that jsx changes require `npm run watch-jsx` in order to be picked up by the server.
+        var data = {
+          title: 'EDAP', array: ['One', 'Two', 'Three', 'Four'], 
+          message: 'Greetings from geekforgeeks'
+          //, issueId: req.query['issueId']
+          //, browserOnly: true // you can set this to disable server-side rendering for react views
+        };
+
+        
+
         res.render(
-          'hello-world.hbs', // change this to 'hello-world.jsx' to use the Atlaskit & React version
-          {
-            title: 'EDAP'
-            //, issueId: req.query['issueId']
-            //, browserOnly: true // you can set this to disable server-side rendering for react views
-          }
+          'hello-world.hbs', // change this to 'hello-world.jsx' to use the Atlaskdkit & React version
+          data
         );
+
+        
     });
+
+    /*app.get('/hello-world', addon.authenticate(), (req, res) => { 
+      res.render('test.hbs', { 
+         array: ['One', 'Two', 'Three', 'Four'], 
+         message: 'Greetings from geekforgeeks'
+      }) ;
+  }); */
 
     // Add additional route handlers here...
 }

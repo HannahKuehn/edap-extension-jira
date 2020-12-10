@@ -17,10 +17,12 @@
           <p>
             nice to meet you!
           </p>
-          <p>
-            <a class="aui-button aui-button-primary" href="https://bitbucket.org/atlassian/atlassian-connect-express" target="_parent">
-              Get Started
-            </a>
+          {{#each array}}  
+          <input type="checkbox" id={{this}} name="check1" value="checktest"> 
+          <label for="check1"> {{this}}</label><br>
+          {{/each}}       
+          First name: <input id="first_name">   
+            <button class="aui-button" onclick="buttonClick()">lets goo</button>
           </p>
         </div>
       </div>
