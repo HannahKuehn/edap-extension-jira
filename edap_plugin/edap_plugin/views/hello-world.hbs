@@ -14,16 +14,14 @@
     <section class="aui-page-panel-item">
       <div class="aui-group">
         <div class="aui-item">
-          <p>
-            nice to meet you!
-          </p>
-          {{#each array}}  
-          <input type="checkbox" id={{this}} name="check1" value="checktest"> 
-          <label for="check1"> {{this}}</label><br>
+          {{#each questions}}  
+          <input type="checkbox" id=question{{@index}} name="check1"> 
+          <label for="check1"> {{this.question}}</label><br>
+            
           {{/each}}       
-          First name: <input id="first_name">   
             <button class="aui-button" onclick="buttonClick()">lets goo</button>
           </p>
+
         </div>
       </div>
     </section>
