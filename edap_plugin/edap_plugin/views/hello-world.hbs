@@ -15,13 +15,18 @@
       <div class="aui-group">
         <div class="aui-item">
           {{#each questions}}  
-          <input type="checkbox" id=question{{@index}} name="check1"> 
+          <input type="checkbox" id=question{{@index}} name="check1" onclick="boxClick(question{{@index}})"> 
           <label for="check1"> {{this.question}}</label><br>
-            
-          {{/each}}       
-            <button class="aui-button" onclick="buttonClick()">lets goo</button>
-          </p>
+            {{#if subquestions}}
+              {{#each subquestions}}
+                <div style="text-indent:20px;"><input type="checkbox" id=subquestion{{@index}} name="check2" onclick="boxClick(subquestion{{@index}})"> 
+                <label for="check2"> {{this.question}}</label><br></div>
+              {{/each}}
+            {{/if}}
+          {{/each}}  
 
+            <button class="aui-button" onclick="buttonClick({{json questions}})">testString</button>
+          </p>
         </div>
       </div>
     </section>

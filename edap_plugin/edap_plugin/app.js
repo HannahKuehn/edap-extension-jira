@@ -49,6 +49,10 @@ app.engine('hbs', handlebarsEngine);
 app.set('view engine', 'hbs');
 app.set('views', viewsDir);
 
+hbs.handlebars.registerHelper('json', function(context) {
+  return JSON.stringify(context);
+});
+
 // Configure jsx (jsx files should go in views/ and export the root component as the default export)
 addServerSideRendering(app, handlebarsEngine);
 

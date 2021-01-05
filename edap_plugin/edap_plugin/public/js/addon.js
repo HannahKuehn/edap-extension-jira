@@ -1,17 +1,15 @@
 /* App frontend script */
 
-var inputs = {
-  questions: [
-  {question: 'Users can interact with the system',
-    subquestions: [
-      { question:'Data about the user is collected', subquestions: [] },
-      { question:'The provided service changes depending on the data that is collected from the user', subquestions: [] }]},
-  {
-    question: 'placeholder',
-    subquestions: []
-  }
-]}
+var relevant = {};
 
-var buttonClick = function(){
-      console.log("hello    " + question0.checked);
-  }
+testString = 'huhu das sollte angezeigt werden';
+
+var buttonClick = function(data){
+      console.log("hello    " + data);
+      //console.log(title[0]);
+  };
+
+var boxClick = function(question){
+  console.log(question.checked);
+};
+
