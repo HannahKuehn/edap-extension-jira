@@ -16,8 +16,8 @@ export default function routes(app, addon) {
           questions: [
             {question: 'Users can interact with the system',
               subquestions: [
-                { question:'Data about the user is collected', subquestions: [] },
-                { question:'The provided service changes depending on the data that is collected from the user', subquestions: [] }
+                { question:'Data about the user is collected'},
+                { question:'The provided service changes depending on the data that is collected from the user'}
               ]},
             {
               question: 'placeholder',
