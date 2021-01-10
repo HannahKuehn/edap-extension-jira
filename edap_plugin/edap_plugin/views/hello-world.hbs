@@ -14,18 +14,26 @@
     <section class="aui-page-panel-item">
       <div class="aui-group">
         <div class="aui-item">
-          {{#each questions}}  
-          <input type="checkbox" id=question{{@index}} name="check1" onclick="boxClick(question{{@index}}, {{json this}})"> 
-          <label for="check1"> {{this.question}}</label><br>
-            {{#if subquestions}}
-              {{#each subquestions}}
-                <div style="text-indent:20px;"><input type="checkbox" id=subquestion{{@index}} name="check2" onclick="boxClick(subquestion{{@index}}, {{json this}})"> 
-                <label for="check2"> {{this.question}}</label><br></div>
-              {{/each}}
-            {{/if}}
-          {{/each}}  
 
-            <button class="aui-button" onclick="buttonClick()">submit</button>
+          {{#each questions}}
+
+            <input type="checkbox" id=question{{this.qid}} name="check1">
+            <label for="check1"> {{this.question}}</label><br>
+
+            {{#if subquestions}}
+
+              {{#each subquestions}}
+                <div style="text-indent:40px;">
+                  <input type="checkbox" id=subquestion{{this.qid}} name="check2">
+                  <label for="check2"> {{this.question}}</label><br>
+                </div>
+              {{/each}}
+
+            {{/if}}
+          {{/each}}
+
+          <button class="aui-button" onclick="buttonClick({{json questions}})">submit</button>
+          <p id="ausgabetext"></p>
           </p>
         </div>
       </div>

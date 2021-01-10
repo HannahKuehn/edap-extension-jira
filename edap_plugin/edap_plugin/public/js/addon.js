@@ -4,27 +4,25 @@ var checks = [];
 
 testString = 'huhu das sollte angezeigt werden';
 
-var buttonClick = function(){
-      /*console.log("hello");
+var buttonClick = function(data){
+      console.log("hello");
+      var out = "";
+
       for(var q = 0; q < data.length; q++){
-        console.log(data[q].question);
-        for(var qs = 0; qs < data[q].subquestions; qs++){
-          console.log('     ' + data[q].subquestions[qs]);
+        if(document.getElementById("question" + q).checked){
+          out += data[q].question + "\n";
         }
-      }*/
-      for(var i = 0; i < checks.length; i++){
-        console.log(checks[i].question);
+
+        for(var qs = 0; qs < data[q].subquestions.length; qs++){
+
+          if(document.getElementById("subquestion" + q + "_" + qs).checked){
+            out += data[q].subquestions[qs].question + "\n";
+          }
+
+        }
+
       }
+      document.getElementById("ausgabetext").innerText = out;
   };
 
-var boxClick = function(check, question){
-  if(check.checked){
-    checks.push(question);
-  }else{
-    const i = checks.indexOf(question);
-    if (i > -1) {
-      checks.splice(i, 1);
-    }
-  } 
-};
 
