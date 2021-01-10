@@ -20,18 +20,31 @@ export default function routes(app, addon) {
             subquestions: [
               {
                 qid: '0_0',
-                question: 'Data about the user is collected'
+                question: 'Data about the user is collected',
+                consequence:"User could be unaware of the usage of their data"
               },
               {
                 qid: '0_1',
-                question: 'The provided service changes depending on the data that is collected from the user'
+                question: 'The provided service changes depending on the data that is collected from the user',
+                consequence:"Users may be discriminated"
               }
             ]
           },
           {
             qid: '1',
-            question: 'placeholder',
-            subquestions: []
+            question: 'The system has social network features',
+            subquestions: [
+              {
+                qid: '1_0',
+                question: 'Content is curated by an algorithm',
+                consequence:"user may get stuck in a bubble, extremist content can be amplified"
+              },
+              {
+                qid: '1_1',
+                question: 'Users can depict unrealistic or selective versions of themselves/their lives',
+                consequence:"Mental Health problems can occur when users feel like they are less than other users"
+              }
+            ]
           }
         ],
           title: 'EDAP'
