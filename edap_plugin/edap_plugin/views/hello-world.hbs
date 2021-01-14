@@ -2,7 +2,7 @@
 <header class="aui-page-header">
   <div class="aui-page-header-inner">
     <div class="aui-page-header-main intro-header">
-      <p class="subtitle">Welcome to {{title}}</p>
+      <p id="pagetitle" class="subtitle">Welcome to {{title}}</p>
     </div>
   </div>
 </header>
@@ -33,7 +33,6 @@
           <button class="aui-button" onclick="buttonClick({{json questions}})">submit</button>
         </div>
         <div id="result" style="visibility:hidden">
-          <h3>The result of your checklist is:</h3>
           <p id="ausgabetext"></p>
           <button class="aui-button" onclick="back()">go back</button>
         </div>

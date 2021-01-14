@@ -8,22 +8,22 @@ var buttonClick = function(data){
 
       for(var q = 0; q < data.length; q++){
         if(document.getElementById("question" + q).checked){
-          out += data[q].question + "\n";
-          //out += "-->" + data[q].consequence + "\n";
+          out += "<H3>" +  data[q].question + "</H3><br>";
+          out += data[q].consequence + "<br>";
         }
 
         for(var qs = 0; qs < data[q].subquestions.length; qs++){
-
           if(document.getElementById("subquestion" + q + "_" + qs).checked){
-            out += "  " + data[q].subquestions[qs].question + "\n";
-            out += "  --> " + data[q].subquestions[qs].consequence + "\n";
+            out += "<H4>" + data[q].subquestions[qs].question + "</H4><br>";
+            out += data[q].subquestions[qs].consequence + "<br>";
           }
 
         }
-
+      
       }
+      document.getElementById("pagetitle").textContent = "Result of your checklist";
       document.getElementById("checklist").style.display = "none";
-      document.getElementById("ausgabetext").innerText = out;
+      document.getElementById("ausgabetext").innerHTML = out;
       document.getElementById("result").style.visibility = "visible";
   };
 
