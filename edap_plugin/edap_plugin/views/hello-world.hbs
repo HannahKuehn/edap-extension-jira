@@ -2,7 +2,7 @@
 <header class="aui-page-header">
   <div class="aui-page-header-inner">
     <div class="aui-page-header-main intro-header">
-      <p id="pagetitle" class="subtitle">Welcome to {{title}}</p>
+      <p id="pagetitle" class="subtitle">Welcome to the {{title}} Checklist</p>
     </div>
   </div>
 </header>
@@ -13,21 +13,29 @@
       <div class="aui-group">
         <div id='checklist'>
 
-          {{#each questions}}
+          {{#each groups}}
 
-            <input type="checkbox" id=question{{this.qid}} name="check1">
-            <label for="check1"> {{this.question}}</label><br>
+          <input type="checkbox" id=group{{this.groupid}} name="check1" onclick="group({{this.groupid}})">
+          <label for="check1"> {{this.group}}</label><br>
 
-            {{#if subquestions}}
+            <div id=groupdiv{{this.groupid}} style="display: none">
+            {{#each questions}}
 
-              {{#each subquestions}}
-                <div style="text-indent:40px;">
-                  <input type="checkbox" id=subquestion{{this.qid}} name="check2">
-                  <label for="check2"> {{this.question}}</label><br>
-                </div>
-              {{/each}}
+              <input type="checkbox" id=question{{this.qid}} name="check1">
+              <label for="check1"> {{this.question}}</label><br>
 
-            {{/if}}
+              {{#if subquestions}}
+
+                {{#each subquestions}}
+                  <div style="text-indent:40px;">
+                    <input type="checkbox" id=subquestion{{this.qid}} name="check2">
+                    <label for="check2"> {{this.question}}</label><br>
+                  </div>
+                {{/each}}
+
+              {{/if}}
+            {{/each}}
+            </div>
           {{/each}}
 
           <button class="aui-button" onclick="buttonClick({{json questions}})">submit</button>

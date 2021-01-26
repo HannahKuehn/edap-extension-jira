@@ -12,19 +12,27 @@ var buttonClick = function(data){
           out += data[q].consequence + "<br>";
         }
 
+        out += "<ul>";
+
         for(var qs = 0; qs < data[q].subquestions.length; qs++){
           if(document.getElementById("subquestion" + q + "_" + qs).checked){
-            out += "<H4>" + data[q].subquestions[qs].question + "</H4><br>";
-            out += data[q].subquestions[qs].consequence + "<br>";
+            out += "<li><H4>" + data[q].subquestions[qs].question + "</H4><br>";
+            out += data[q].subquestions[qs].consequence + "<br></li>";
           }
 
         }
+
+        out += "</ul>";
       
       }
       document.getElementById("pagetitle").textContent = "Result of your checklist";
       document.getElementById("checklist").style.display = "none";
       document.getElementById("ausgabetext").innerHTML = out;
       document.getElementById("result").style.visibility = "visible";
+  };
+
+  var group = function(group){
+    document.getElementById("groupdiv" + group).style.display = document.getElementById("group" + group).checked ? "inline" : "none";
   };
 
   var back = function(){
@@ -36,6 +44,7 @@ var buttonClick = function(data){
     }
     document.getElementById("checklist").style.display = "inline";
     document.getElementById("result").style.visibility = "collapse";
+    document.getElementById("pagetitle").textContent = "Welcome to the EDAP Checklist";
   };
 
 
