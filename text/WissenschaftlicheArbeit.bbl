@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{de2010requirements:1}
+Andrea De~Lucia and Abdallah Qusef.
+\newblock Requirements engineering in agile software development.
+\newblock {\em Journal of emerging technologies in web intelligence},
+  2(3):212--220, 2010.
+
+\bibitem{sillitti2005requirements:3}
+Alberto Sillitti and Giancarlo Succi.
+\newblock Requirements engineering for agile methods.
+\newblock In {\em Engineering and Managing Software Requirements}, pages
+  309--326. Springer, 2005.
+
+\bibitem{van2001goal:2}
+Axel Van~Lamsweerde.
+\newblock Goal-oriented requirements engineering: A guided tour.
+\newblock In {\em Proceedings fifth ieee international symposium on
+  requirements engineering}, pages 249--262. IEEE, 2001.
+
+\end{thebibliography}

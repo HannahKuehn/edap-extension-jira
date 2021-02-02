@@ -1,30 +1,34 @@
 /* App frontend script */
 var rememberData;
 
-var buttonClick = function(data){
-      rememberData = data;
-      
+var buttonClick = function(groups){
+      rememberData = groups;
       var out = "";
 
-      for(var q = 0; q < data.length; q++){
-        if(document.getElementById("question" + q).checked){
-          out += "<H3>" +  data[q].question + "</H3><br>";
-          out += data[q].consequence + "<br>";
-        }
-
-        out += "<ul>";
-
-        for(var qs = 0; qs < data[q].subquestions.length; qs++){
-          if(document.getElementById("subquestion" + q + "_" + qs).checked){
-            out += "<li><H4>" + data[q].subquestions[qs].question + "</H4><br>";
-            out += data[q].subquestions[qs].consequence + "<br></li>";
+      for(var i = 0; i < groups.length; i++){
+        var data = groups[i].questions;
+        
+        for(var q = 0; q < data.length; q++){
+          if(document.getElementById("question" + data[q].qid).checked){
+            out += "<H3>" +  data[q].question + "</H3><br>";
+            out += data[q].consequence + "<br>";
           }
-
+  
+          out += "<ul>";
+  
+          for(var qs = 0; qs < data[q].subquestions.length; qs++){
+            if(document.getElementById("subquestion" + data[q].subquestions[qs].qid).checked){
+              out += "<li><H4>" + data[q].subquestions[qs].question + "</H4><br>";
+              out += data[q].subquestions[qs].consequence + "<br></li>";
+            }
+  
+          }
+  
+          out += "</ul>";
+        
         }
-
-        out += "</ul>";
-      
       }
+      
       document.getElementById("pagetitle").textContent = "Result of your checklist";
       document.getElementById("checklist").style.display = "none";
       document.getElementById("ausgabetext").innerHTML = out;
@@ -36,10 +40,14 @@ var buttonClick = function(data){
   };
 
   var back = function(){
-    for(var q = 0; q < rememberData.length; q++){
-      document.getElementById("question" + q).checked = false;
-      for(var qs = 0; qs < rememberData[q].subquestions.length; qs++){
-        document.getElementById("subquestion" + q + "_" + qs).checked = false;
+    for(var i = 0; i < rememberData.length; i++){
+      var data = rememberData[i].questions;
+      document.getElementById("group" + rememberData[i].groupid).checked = false;
+      for(var q = 0; q < data.length; q++){
+        document.getElementById("question" + data[q].qid).checked = false;
+        for(var qs = 0; qs < data[q].subquestions.length; qs++){
+          document.getElementById("subquestion" + data[q].subquestions[qs].qid).checked = false;
+        }
       }
     }
     document.getElementById("checklist").style.display = "inline";
