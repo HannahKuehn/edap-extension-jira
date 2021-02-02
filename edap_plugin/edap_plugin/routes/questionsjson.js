@@ -1,7 +1,7 @@
 const data = {
   groups: [
     {
-      group: "data related checkpoints",
+      group: "Data-related checkpoints",
       groupid:"0",
       questions: [
         {

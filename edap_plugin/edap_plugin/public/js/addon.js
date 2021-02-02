@@ -7,7 +7,7 @@ var buttonClick = function(groups){
 
       for(var i = 0; i < groups.length; i++){
         var data = groups[i].questions;
-        
+        out += "<H2>" + groups[i].group + "</H2><br>";
         for(var q = 0; q < data.length; q++){
           if(document.getElementById("question" + data[q].qid).checked){
             out += "<H3>" +  data[q].question + "</H3><br>";
