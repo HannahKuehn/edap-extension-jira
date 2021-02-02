@@ -43,6 +43,7 @@ var buttonClick = function(groups){
     for(var i = 0; i < rememberData.length; i++){
       var data = rememberData[i].questions;
       document.getElementById("group" + rememberData[i].groupid).checked = false;
+      document.getElementById("groupdiv" + rememberData[i].groupid).style.display = "none";
       for(var q = 0; q < data.length; q++){
         document.getElementById("question" + data[q].qid).checked = false;
         for(var qs = 0; qs < data[q].subquestions.length; qs++){
