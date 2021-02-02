@@ -15,12 +15,12 @@
     "modules": {
         "generalPages": [
             {
-                "key": "hello-world-page-jira",
+                "key": "checklist-page",
                 "location": "system.top.navigation.bar",
                 "name": {
-                    "value": "Hello World"
+                    "value": "Checklist"
                 },
-                "url": "/hello-world",
+                "url": "/checklist",
                 "conditions": [{
                     "condition": "user_is_logged_in"
                 }]
