@@ -5,7 +5,7 @@ import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components'
 
 export function addServerSideRendering(app, handlebarsEngine) {
-  const devEnv = app.get('env') === 'development';
+  const devEnv = app.get('env') === 'production';
   const viewsDir = app.get('views');
   // Serve the views directory so we can include the component's script on the page
   app.use(express.static(viewsDir));
