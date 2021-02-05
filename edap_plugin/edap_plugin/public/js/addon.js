@@ -34,14 +34,14 @@ var buttonClick = function (groups) {
 };
 
 var questionFormat = function(sub, question, short, consequence){
-  var beginHeader = sub? "<li><H4>" : "<H3>";
-  var endHeader = sub? "</H4><br>" : "</H2><br>";
-  var end = sub? "</li><br>" : "<br>";
+  var beginHeader = sub? "<dl><dt><H4>" : "<dl><dt><H3>";
+  var endHeader = sub? "</H4></dt>" : "</H2></dt>";
+  var end = sub? "</dl><br>" : "</dl><br>";
   var str = "";
   str += beginHeader + question + endHeader;
 
   for(var i = 0; i < short.length; i++){
-    str += "<li>" + short[i] + "</li><br>";
+    str += "<dd>" + short[i] + "</dd>";
   }
   
   str += consequence + end;
