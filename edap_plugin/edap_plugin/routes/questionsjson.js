@@ -35,7 +35,7 @@ const data = {
               qid: "0_3_0",
               question: "The data will be reused or re-purposed",
               short: ["You may need to go back and ask for permission or reassess your plans"],
-              consequence: ""
+              consequence: " - "
             },
             {
               qid: "0_3_1",
