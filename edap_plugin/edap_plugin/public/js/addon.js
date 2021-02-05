@@ -35,7 +35,7 @@ var buttonClick = function (groups) {
 
 var questionFormat = function(sub, question, short, consequence){
   var beginHeader = sub? "<dl><dt><H4>" : "<dl><dt><H3>";
-  var endHeader = sub? "</H4></dt>" : "</H2></dt>";
+  var endHeader = sub? "</H4></dt><br>" : "</H2></dt><br>";
   var end = sub? "</dd></dl><br>" : "</dd></dl><br>";
   var str = "";
   str += beginHeader + question + endHeader;
@@ -44,7 +44,7 @@ var questionFormat = function(sub, question, short, consequence){
     str += "<dd><li>" + short[i] + "</li></dd>";
   }
   
-  str += "<dd>" + consequence + end;
+  str += "<dd><br>" + consequence + end;
   return str;
 };
 
