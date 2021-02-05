@@ -96,7 +96,8 @@ var fs = require('fs');
 var https = require('https');
 var privateKey  = fs.readFileSync('/var/lib/rbg-cert/live/host:intum:vmpretschner43.privkey.pem', 'utf8');
 var certificate = fs.readFileSync('/var/lib/rbg-cert/live/host:intum:vmpretschner43.cert.pem', 'utf8');
-var credentials = {key: privateKey, cert: certificate};
+var chain = fs.readFileSync('/var/lib/rbg-cert/live/host:intum:vmpretschner43.chain.pem', 'utf-8');
+var credentials = {key: privateKey, cert: certificate, ca: chain};
 
 // Boot the HTTP server
 https.createServer(credentials, app).listen(port, () => {
