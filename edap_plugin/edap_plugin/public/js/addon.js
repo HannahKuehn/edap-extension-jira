@@ -33,24 +33,20 @@ var buttonClick = function (groups) {
   document.getElementById("result").style.visibility = "visible";
 };
 
-var questionFormat = function(sub, question, short, consequence){
-  var beginHeader = sub? "<dl><dt><H4>" : "<dl><dt><H3>";
-  var endHeader = sub? "</H4></dt><br>" : "</H2></dt><br>";
-  var end = sub? "</dd></dl><br>" : "</dd></dl><br>";
+var questionFormat = function (sub, question, short, consequence) {
+  var beginHeader = sub ? "<dl><dt><H4>" : "<dl><dt><H3>";
+  var endHeader = sub ? "</H4></dt><br>" : "</H2></dt><br>";
+  var end = sub ? "</dd></dl><br>" : "</dd></dl><br>";
   var str = "";
   str += beginHeader + question + endHeader;
-
-  for(var i = 0; i < short.length; i++){
+  str += "<dd>summary:</dd>"
+  for (var i = 0; i < short.length; i++) {
     str += "<dd><li>" + short[i] + "</li></dd>";
   }
-  
+
   str += "<dd><br>" + consequence + end;
   return str;
 };
-
-var subFormat = function(question, short, consequence){
-
-}
 
 var group = function (group) {
   document.getElementById("groupdiv" + group).style.display = document.getElementById("group" + group).checked ? "inline" : "none";
