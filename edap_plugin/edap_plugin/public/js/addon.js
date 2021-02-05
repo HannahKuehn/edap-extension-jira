@@ -39,11 +39,12 @@ var questionFormat = function (sub, question, short, consequence) {
   var end = sub ? "</dd></dl><br>" : "</dd></dl><br>";
   var str = "";
   str += beginHeader + question + endHeader;
-  str += "<dd>summary:</dd>"
+  
   for (var i = 0; i < short.length; i++) {
     str += "<dd><li>" + short[i] + "</li></dd>";
   }
 
+  str += "<dd><strong>detailed explanation:</strong></dd>"
   str += "<dd><br>" + consequence + end;
   return str;
 };
