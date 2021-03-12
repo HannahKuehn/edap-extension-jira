@@ -21,8 +21,10 @@
             <div id=groupdiv{{this.groupid}} style="display: none">
             {{#each questions}}
 
+            <div style="margin:20px;">
               <input type="checkbox" id=question{{this.qid}} name="check1">
               <label for="check1"> {{this.question}}</label><br>
+            </div>
 
               {{#if subquestions}}
 
